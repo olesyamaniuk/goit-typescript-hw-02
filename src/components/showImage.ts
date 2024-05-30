@@ -20,23 +20,23 @@ axios.defaults.baseURL = "https://api.unsplash.com/";
 
 const MyAccess = "AIK1kkcDQtr5tx71hXjaprpcLRmG884OQKAMFhDVvag";
 
-interface Image {
-  id: string;
-  description: string | null;
-  alt_description: string | null;
-  urls: {
-    raw: string;
-    full: string;
-    regular: string;
-    small: string;
-    thumb: string;
-  };
-  user: {
-    name: string;
-  };
-}
+// interface Image {
+//   id: string;
+//   description: string | null;
+//   alt_description: string;
+//   urls: {
+//     raw: string;
+//     full: string;
+//     regular: string;
+//     small: string;
+//     thumb: string;
+//   };
+//   user: {
+//     name: string;
+//   };
+// }
 
-export const fetchImages = async (searchQuery: string, currentPage: number): Promise<Image[]> => {
+export const fetchImages = async (searchQuery: string, currentPage: number) => {
   try {
     const response = await axios.get(`/search/photos`, {
       params: {

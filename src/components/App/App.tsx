@@ -123,7 +123,12 @@ function App(): JSX.Element {
         setError(false);
         setIsLoader(true);
         const data = await fetchImages(query, page);
-        setImages((prevImages) => [...prevImages, ...data]);
+        // setImages((prevImages) => [...prevImages, ...data]);
+        // setImages((prevImages: Image[]) => [...prevImages, ...data]);
+        setImages((prevImages: Image[]) => {
+          const updatedImages: Image[] = [...prevImages, ...data];
+          return updatedImages;
+        });
       } catch (error) {
         setError(true);
       } finally {
